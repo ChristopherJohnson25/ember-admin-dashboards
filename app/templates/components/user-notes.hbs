@@ -1,0 +1,19 @@
+{{yield}}
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-6">
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" style="cursor: pointer;" id="sizing-addon1" {{action 'submitNotes'}}>+</span>
+      {{input type="hidden" value=user valueBinding=user.id class="form-control" aria-controls="existing-user-table" placeholder="Notes..." aria-describedby="sizing-addon1"}}
+      {{input action="submitNotes" value=content class="form-control" aria-controls="existing-user-table" placeholder="Notes..." aria-describedby="sizing-addon1"}}
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-6">
+    <div class="well well-md">
+        {{#each user.notes as |note|}}
+          - {{note.content}}
+          <br />
+        {{/each}}
+    </div>
+  </div>
+</div>

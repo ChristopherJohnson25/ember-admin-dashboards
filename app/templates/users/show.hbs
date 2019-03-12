@@ -15,6 +15,7 @@
             {{/if}}
           </div>
           <div class="col-sm-6 col-md-8">
+            {{file-upload user=user store=store name=user.name session=session.currentUser.displayName}}
             <h3>{{user.name}}</h3>
             <span class="label label-primary">Primary</span>
             <br />
@@ -47,57 +48,30 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-6">
-      <div class="input-group input-group-lg">
-        <span class="input-group-addon" style="cursor: pointer;" id="sizing-addon1" {{action 'submitNotes'}}>+</span>
-        {{input type="hidden" value=user valueBinding=user.id class="form-control" aria-controls="existing-user-table" placeholder="Notes..." aria-describedby="sizing-addon1"}}
-        {{input action="submitNotes" value=content class="form-control" aria-controls="existing-user-table" placeholder="Notes..." aria-describedby="sizing-addon1"}}
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-6">
-      <div class="well well-md">
-          {{#each user.notes as |note|}}
-            - {{note.content}}
-            <br />
-          {{/each}}
-      </div>
-    </div>
+  {{user-notes user=user store=store}}
+  <!-- {{user-actions user=user store=store}} -->
+  <div class="well well-sm">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Link</th>
+          <th scope="col">Type</th>
+          <th scope="col">Uploaded By</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each user.documents as |documents i|}}
+          <tr>
+            <th scope="row">{{plus-one i}}</th>
+            <td><a target="_blank" href="{{documents.url}}">{{documents.name}}</a></td>
+            <td>{{documents.type}}</td>
+            <td>{{documents.uploadedBy}}</td>
+            <td>{{user.phone}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
   </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-6">
-      <div class="input-group input-group-lg">
-        <span class="input-group-addon" id="sizing-addon1" {{action 'submitAction'}}>+</span>
-        {{input type="hidden" value=user valueBinding=user.id class="form-control" aria-controls="existing-user-table" placeholder="Notes..." aria-describedby="sizing-addon1"}}
-        {{input action="submitAction" value=timeLineContent class="form-control" aria-controls="existing-user-table" placeholder="Actions..." aria-describedby="sizing-addon1"}}
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-6">
-        <ul class="timeline">
-          <li class="time-label">
-              <span class="bg-red">
-                  10 Feb. 2014
-              </span>
-          </li>
-          {{#each user.actions as |action|}}
-            <li>
-              <i class="fa fa-envelope bg-blue"></i>
-              <div class="timeline-item">
-                <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
-                <h3 class="timeline-header">Support Team</h3>
-                <div class="timeline-body">
-                  {{action.content}}
-                </div>
-              </div>
-            </li>
-          {{/each}}
 
-
-        </ul>
-      </div>
-
-
-  </div>
 </div>

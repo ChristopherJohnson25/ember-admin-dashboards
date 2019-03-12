@@ -12,5 +12,6 @@ export default DS.Model.extend({
   homeLat: DS.attr('string'),
   homeLng: DS.attr('string'),
   notes: DS.hasMany('user-notes'),
-  actions: DS.hasMany('user-actions')
+  actions: DS.hasMany('user-actions'),
+  documents: DS.hasMany('user-document')
 });
