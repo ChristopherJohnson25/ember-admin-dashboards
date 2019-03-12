@@ -36,8 +36,10 @@
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
+    "emberfire": "2.0.10",
     "liquid-fire": "0.26.6",
-    "loader.js": "^4.0.10"
+    "loader.js": "^4.0.10",
+    "torii": "0.10.1"
   },
   "engines": {
     "node": ">= 0.12.0"

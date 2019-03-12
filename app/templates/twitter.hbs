@@ -2,7 +2,6 @@
 <section class="content-header">
   <h1>
     <i class="fa fa-dashboard"></i> Realtime dashboard
-    <small>Ember.js + node.js + socket.io + Twitter streaming api</small>
   </h1>
   {{!-- <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -20,14 +19,14 @@
 				<div class="small-box bg-aqua">
 			      <div class="inner">
 			        <h3>
-			          {{tweetCount}}
+			          {{users-global.length}}
 			        </h3>
 			        <p>
-			          Total tweets
+			          Total Users
 			        </p>
 			      </div>
 			      <div class="icon">
-			        <i class="ion ion-social-twitter-outline"></i>
+			        <i class="ion ion-contact-outline"></i>
 			      </div>
 			      <a href="https://dev.twitter.com/streaming/reference/get/statuses/sample" target="_blank" class="small-box-footer">
 			        Real tweets from Streaming api

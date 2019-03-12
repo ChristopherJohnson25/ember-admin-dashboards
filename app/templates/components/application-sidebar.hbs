@@ -3,12 +3,11 @@
   <!-- Sidebar user panel -->
   <div class="user-panel">
 	<div class="pull-left image">
-	  <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+	  <img src={{session.currentUser.photoURL}} class="img-circle" alt="User Image" />
 	</div>
 	<div class="pull-left info">
-	  <p>Alexander Pierce</p>
-
-	  <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+	  <p>{{session.currentUser.displayName}}</p>
+    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
 	</div>
   </div>
   <!-- search form -->
@@ -25,22 +24,21 @@
   <ul class="sidebar-menu">
 	<li class="header">MAIN NAVIGATION</li>
 	<li>
-	  {{#link-to 'twitter'}}
-		<i class="fa fa-twitter"></i> <span>Twitter</span>
-		<small class="label pull-right bg-red">3</small>
+	  {{#link-to 'users'}}
+		<i class="fa fa-user"></i> <span>Users</span>
+		<small class="label pull-right bg-red">{{usersCount}}</small>
 	  {{/link-to}}
 	</li>
-	<li class="treeview">
+	<!-- <li class="treeview">
 	  <a href="#">
 		<i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
 	  </a>
 	  <ul class="treeview-menu">
 		<li>{{#link-to 'comingsoon'}}<i class="fa fa-circle-o"></i> Dashboard v1{{/link-to}}</li>
 		<li>{{#link-to 'index'}}<i class="fa fa-circle-o"></i> Dashboard v2{{/link-to}}</li>
-
 	  </ul>
-	</li>
-	<li class="treeview">
+	</li> -->
+	<!-- <li class="treeview">
 	  <a href="#">
 		<i class="fa fa-files-o"></i>
 		<span>Layout Options</span>
@@ -52,12 +50,12 @@
 		<li>{{#link-to 'comingsoon'}}<i class="fa fa-circle-o"></i> Fixed{{/link-to}}</li>
 		<li>{{#link-to 'comingsoon'}}<i class="fa fa-circle-o"></i> Collapsed Sidebar{{/link-to}}</li>
 	  </ul>
-	</li>
-	<li>
+	</li> -->
+	<!-- <li>
 	  {{#link-to 'widgets'}}
 		<i class="fa fa-th"></i> <span>Widgets</span> <small class="label pull-right bg-green">new</small>
 	  {{/link-to}}
-	</li>
+	</li> -->
 
 
 	<li class="treeview">

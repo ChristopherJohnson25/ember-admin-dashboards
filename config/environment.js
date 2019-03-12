@@ -12,7 +12,17 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-
+    firebase: {
+      apiKey: 'AIzaSyCsqUzeKGtzQkyFpXvf71dfYX4p0dJAqnU',
+      authDomain: 'travel-agency-8224d.firebaseapp.com',
+      databaseURL: 'https://travel-agency-8224d.firebaseio.com',
+      projectId: "travel-agency-8224d",
+      storageBucket: "travel-agency-8224d.appspot.com",
+      messagingSenderId: "919814369648"
+    },
+    torii: {
+      sessionServiceName: 'session'
+    },
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created

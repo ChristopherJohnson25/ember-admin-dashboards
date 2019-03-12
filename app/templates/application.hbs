@@ -1,6 +1,6 @@
 <div class="wrapper">
-  {{application-header}}
-  {{application-sidebar}}
+  {{application-header session=session}}
+  {{application-sidebar session=session usersCount=users-global.length}}
   <!-- Right side column. Contains the navbar and content of the page -->
   <div class="content-wrapper">
   	{{liquid-outlet}}
@@ -9,6 +9,3 @@
   {{application-footer}}
 
 </div><!-- ./wrapper -->
-
-
-

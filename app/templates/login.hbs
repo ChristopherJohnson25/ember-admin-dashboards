@@ -1,0 +1,11 @@
+{{outlet}}
+
+{{#if session.currentUser}}
+    <div>
+        <button class="sign-out" {{action "signOut"}}>Sign Out</button>
+    </div>
+{{else}}
+  <div>
+    <button class="auth-as-google"   {{action "signIn" "google" redirect}}>Sign in with Google</button>
+  </div>
+{{/if}}
